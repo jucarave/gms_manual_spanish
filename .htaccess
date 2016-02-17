@@ -1,5 +1,5 @@
 RewriteEngine On
 RewriteBase /
 
-RewriteRule ^(css)($|/) - [L]
+RewriteRule ^(css|img)($|/) - [L]
 RewriteRule ^(.*)/?$ index.php?page=$1 [L,NC,QSA]

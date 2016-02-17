@@ -1,3 +1,4 @@
+<?php require("config.php"); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
@@ -8,7 +9,7 @@
         <title>GameMaker: Studio Manual Español</title>
         
         <meta http-equiv="X-UA-Compatible" content="IE=9">
-        <link rel="stylesheet" href="/css/cgm.css" type="text/css">
+        <link rel="stylesheet" href="<?php echo $cp; ?>/css/cgm.css" type="text/css">
     </head>
     
     <body>

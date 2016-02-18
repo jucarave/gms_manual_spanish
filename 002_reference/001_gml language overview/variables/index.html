@@ -1,0 +1,91 @@
+<h1 class="studio">Variables y su Alcance</h1>
+
+<h2 class="studio">Se tratan los diferentes tipos de variables disponibles en <i>GameMaker: Studio</i>.</h2>
+
+<p>
+    Como cualquier otro lenguaje de programación, GML usa variables como la unidad 
+    básica para la mayoría de las operaciones de programación. Las variables se utilizan 
+    para almacenar información en la memoria para su posterior (o inmediato) uso. 
+    Se les asigna un nombre para poder llamarlas en funciones y programas. Una 
+    variable en GML puede almacenar un número real, (como 100, 2.456575, -56, etc.) 
+    o una cadena (como "Hola , mundo").
+    <br>
+    <br>
+    De manera coloquial, una variable es un contenedor para poner un valor que se usará 
+    en una o más operaciones o funciones. Imagina el valor "pi", Un número de tipo real 
+    que guarda el valor 3.14159265(etc...). ¿Por qué? Es más fácil decir "pi" que "tres 
+    punto catorce quince noventaydos sesenta y cinco. De este modo, darle nombre a los 
+    valores facilita su uso, y también nos asegura que aun cuando el valor de la variable 
+    cambie, su <i>nombre</i> será siempre el mismo. El nombre de una variable en <b>GML</b> siempre 
+    debe comenzar con una letra y sólo puede contener letras, números y el guión bajo 
+    '_' (no se admiten cacateres acentuados ni especiales). Su longitud no debe exceder 
+    los 64 caracteres. Ejemplos de variables válidas son <tt>velocidad</tt>, <tt>limite_inferior</tt>, 
+    <tt>numero1</tt>; nombres no válidos podrían ser <tt>5velocidad</tt>, <tt>limite superior</tt>, o 
+    <tt>*numero</tt>. En otros lenguajes de programación, es necesario "declarar" una variable antes de usarla. 
+    Esto quiere decir que se le indica a la computadora el nombre con el que se desea 
+    identificar esa variable, de tal modo que se le reserve un espacio en memoria para 
+    almacenar cualquier dato que se desea "poner" en la variable. Esto no siempre es 
+    necesario en <b>GML</b>, ya que depende del <i>alcance</i> de la variable. Hay cuatro categorías 
+    de variables en <i>GameMaker: Studio</i> y cada una tiene su propio <i>alcance</i> (el area de 
+    operación o su dominio). Las cuatro categorías son: 
+    <br>
+    <br>
+</p>
+
+<blockquote>
+    <ul>
+        <li><b>instancia</b>: La categoría más común. Las variables son definidas 
+        dentro de la instancia. Son únicas y propias de su instancia y se les 
+        puede usar en cualquier evento y cualquier función dentro de esa instancia.<br>
+        <br></li>
+        
+        <li><b>local</b>: Estas variables se declaran mediante la función "var". Una 
+        variable local sólo es válida dentro del evento o script en el cual se crea. 
+        En este caso <i>GameMaker: Studio</i> creará la variable, la usará el tiempo que dure 
+        el evento y luego se "olvidará" de ella, lo que causará que se obtenga el error 
+        "unknown variable" si se intenta usarla posteriormente.<br>
+        <br></li>
+        
+        <li><b>global</b>: Una variable global pertenece a todo el entorno de juego, 
+        y no a una instancia en específico (a pesar que se declare dentro de una instancia). 
+        En un principio, tiene que declararse como global, pero después de esto, cualquier 
+        instancia puede leer o cambiar su valor. El valor de la variable siempre reflejará 
+        la última operación de la que fue objeto, sin importar qué instancia desarrolló 
+        la operación.<br>
+        <br></li>
+        
+        <li><b>variables internas</b>: Son variables especiales inherentes a los objetos y 
+        habitaciones en el entorno. Están ahí desde que una habitación u objeto es creado. 
+        Pueden tener alcance de instancia o global, pero nunca local. Hay una gran cantidad 
+        de estas variables y cada una tiene usos muy específicos, se les describe con detalle 
+        a lo largo del manual en las secciones correspondientes. 
+        <br></li>
+    </ul>
+</blockquote>
+
+<p>Más detalles sobre los tipos de variables se encentra en las siguientes páginas:<br>
+<br></p>
+
+<blockquote>
+    <ol>
+        <li><a href="instance%20variables">Variables de Instancia</a><br>
+        </li>
+        
+        <li><a href="local%20variables">Variables Locales</a><br>
+        </li>
+        
+        <li><a href="global%20variables">Variables Globales</a><br>
+        </li>
+    </ol>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+    <div style="float:left">Anterior: <a href="../index">Descripción del GML</a></div>
+    
+    <div style="float:right">Siguiente: <a href="../401_05_addressing.html">Accediendo a Variables Desde Otras Instancias.</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2015 All Rights Reserved</h5>

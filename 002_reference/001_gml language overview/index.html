@@ -1,0 +1,125 @@
+<h1 class="studio">Descripción del GML</h1>
+
+<h2>
+    <i>GameMaker: Studio</i> tiene su propio lenguaje de programación llamado
+    <b>GameMaker Language</b> (Abreviado a <b>GML</b>).
+</h2>
+
+<p>
+    El lenguajde de programación de <i>GameMaker: Studio</i>, le otorga mucha 
+    más flexibilidad y control que las acciones básicas que están disponibles a 
+    traves de la interfaz Drag'n'Drop (DnD). Hay un grán número de lugares en los 
+    que se puede sar este lenguaje para crear y controlar su juego:
+</p>
+
+<blockquote>
+    <ul>
+        <li>
+            <b>Scripts</b>. Un script es (usualmente) pequeños pedazos de código
+            GML que usted escribe para crear sus propias funciones.
+            <br>
+            <br>
+        </li>
+        
+        <li>
+            <b>Eventos</b>. Usted puede usar código dentro de los eventos para 
+            controlar el comportamiento y las interacciones de las instancias 
+            de esos objetos. ¡Se puede mezclar incluso Drag'n'Drop con código!
+            <br>
+            <br>
+        </li>
+        
+        <li>
+            <b>Código de Creación de Rooms</b>. Cada room tiene un "evento create" 
+            específico para esa room. Aquí usted puede añadir el código que 
+            necesite y se ejecutara cada vez que se entra en el room.
+            <br>
+            <br>
+        </li>
+        
+        <li>
+            <b>Código de Creación de Instancias</b> Del mismo modo que se puede
+            insertar dentro de los eventos de un objeto, usted también puede
+            añadir código a instancias individuales cuando las ubica en los rooms.
+            Este código se ejecutara despues del evento de creación del objeto y 
+            es específico a la instancia a la que se añada. Así que puedes tener
+            cuatro instancias del mismo objeto, cada uno con propiedades diferentes
+            gracias a este código.
+            <br>
+        </li>
+    </ul>
+</blockquote>
+
+<p>
+    En esta sección vamos a describir la estructura básica de las funciones GML
+    y como pueden ser usados para crear sus propios programas y generalmente
+    controlar su juego. Tenga en cuenta que antes de programar en <i>GameMaker: Studio</i>
+    ¡hay algunas convenciones que usted debería seguir! Primero que todo, para todos
+    los recursos (sprites, objetos, sonidos, etc...) que usted utilice deben tener nombres
+    que comiencen con una letra y que solo contengan letras, dígitos y el simbolo de guión bajo '_'
+    (por ejemplo "spr_Fish" es aceptable pero no lo es "spr Fish" o "6Fish") de otro modo
+    no podrá hacer referencia a ellos desde las funciones GML. También, asegúrese de que todos 
+    sus recursos tengan un nombre diferente (Hay una función en la sección de
+    <a href="../../000_using%20gamemaker/drop%20down%20menus/the%20scripts%20menu.html">Scripts</a>
+    del editor principal que puede revisar esto por usted), y <i>no</i> nombre 
+    ningún recurso como <b>self</b>, <b>other</b>, <b>global</b>, o <b>todos</b>
+    ya que estos tienen un significado especial en el lenguaje.
+</p>
+
+<p>La información sobre el lenguaje GML se encuentra en las siguientes páginas:</p>
+
+<blockquote>
+    <ol>
+        <li><a href="401_01_program.html">Código</a><br></li>
+        
+        <li><a href="variables/index.html">Variables y su alcance</a><br></li>
+        
+        <li><a href="401_05_addressing.html">Accediendo a Variables Desde Otras Instancias.</a><br></li>
+        
+        <li><a href="data%20types.html">Tipos de Datos</a><br></li>
+        
+        <li><a href="401_06_arrays.html">Arreglos</a><br></li>
+        
+        <li><a href="401_16_functions.html">Funciones</a><br></li>
+        
+        <li><a href="401_03_assignments.html">Asignaciones</a><br></li>
+        
+        <li><a href="401_04_expressions.html">Expresiones</a><br></li>
+        
+        <li><a href="accessors.html">Accesores</a><br></li>
+        
+        <li><a href="401_07_if.html">La Sentencia "If"</a><br></li>
+        
+        <li><a href="401_08_repeat.html">La Sentencia "Repeat"</a><br></li>
+        
+        <li><a href="401_09_while.html">La Sentencia "While"</a><br></li>
+        
+        <li><a href="401_10_do.html">La Sentencia "Do"</a><br></li>
+        
+        <li><a href="401_11_for.html">La Sentencia "For"</a><br></li>
+        
+        <li><a href="401_12_switch.html">La Sentencia "Switch"</a><br></li>
+        
+        <li><a href="401_13_break.html">La Sentencia "Break"</a><br></li>
+        
+        <li><a href="401_14_continue.html">La Sentencia "Continue"</a><br></li>
+        
+        <li><a href="401_15_exit.html">La Sentencia "Exit"</a><br></li>
+        
+        <li><a href="401_18_with.html">La Sentencia "With"</a><br></li>
+        
+        <li><a href="401_17_scripts.html">Scripts</a><br></li>
+        
+        <li><a href="401_19_comment.html">Comentarios en el código</a><br></li>
+        
+        <li><a href="401_20_evaluation_order.html">Orden de Evaluación</a><br></li>
+    </ol>
+</blockquote>
+
+<p><br></p>
+
+<div class="clear">
+    <div style="float:left">Anterior: <a href="../index">Referencias</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2015 All Rights Reserved</h5>

@@ -1,0 +1,131 @@
+<h1 class="studio">Resumen de GameMaker: Studio</h1>
+
+<h2>Esta sección explica algunos de los conceptos fundamentales del funcionamiento 
+de GameMaker: Studio para empezar a hacer juegos lo antes posible.</h2>
+
+<h3>La Idea Global</h3>
+
+<p>
+    Antes de profundizar en las posibilidades de GMS es conveniente entender la idea 
+    detrás del programa. Los juegos creados con GMS ocurren dentro de una o más 
+    "rooms" (habitaciones). Esas rooms son espacios planos (de 2 dimensiones), pero 
+    pueden contener gráficos con apariencia 3D, dependiendo de cómo se usen. En las 
+    rooms se colocan objetos, los cuales se definen dentro del programa. Los objetos 
+    típicos pueden ser muros, esferas en movimiento, el personaje controlable,
+    enemigos, y cualquier cosa que puedas imaginar de los juegos que haya jugado. 
+    Algunos objetos, como los muros, permanecen inmóviles y no hacen nada, mientras 
+    que otros, como el personaje controlable, tendrán movimiento y reaccionarán a 
+    los comandos recibidos del jugador, usando teclado, ratón o joystick. Por 
+    ejemplo, cuando el personaje se encuantra a un enemigo, podría morir o luchar 
+    para ganar puntos. Como puede ver, los objetos son el ingrediente más importante 
+    en los juegos hechos con GMS, así que hablaremos mucho de ellos.
+    <br><br>
+</p>
+
+<h3>Un Resumen de los Objetos y las Habitaciones</h3>
+
+<p>
+    En primer lugar, la mayoría de los objetos, cuando se colocan como instancias 
+    dentro de una room, necesitan una imagen para ser visibles en la pantalla. Tales 
+    imágenes se llaman "sprites". Un sprite, por lo general, no es una imagen única, 
+    sino un conjunto de imágenes que se muestran una tras otra para crear una 
+    animación, y de esta forma se puede ver que un personaje camina, una esfera 
+    rota, o un enemigo explota, etc. Durante el juego, el sprite de cualquier 
+    instancia se puede cambiar, así un personaje se puede ver diferente cuando 
+    camina a la izquierda o a la derecha. Los sprites se pueden crear dentro de GMS 
+    o pueden ser cargados desde archivos, también se pueden modificar con el editor 
+    de sprites. A continuación se muestra la ventana de propiedades de un objeto 
+    típico.
+    <br>
+    <img class="center" src="http://docs.yoyogames.com/source/dadiospice/images/form_object.png">
+    <br>
+    Para que un objeto haga algo, se le deben dar acciones, y se le debe decir 
+    cuándo realizar esas acciones. Para ello se utilizan los "eventos". Un evento es 
+    un momento especial en el que podemos colocar acciones y estar seguros de que 
+    esas acciones se ejecutarán sólo cuando el evento es lanzado. Hay un gran número 
+    de eventos disponibles y una gran cantidad de acciones que se pueden asignar a 
+    los eventos. Por ejemplo, hay un evento "Create" que se ejecuta únicamente 
+    cuando una instancia es creada.
+    <br><br>
+    En este punto vale la pena mencionar la diferencia entre instancias y objetos. 
+    Una instancia es la copia de un objeto base, con los mismos eventos y acciones, 
+    pero sus variables pueden tener valores diferentes a los de otras instancias 
+    creadas a partir del mismo objeto. El objeto es una especie de plantilla, y la 
+    instancia es una manifestación de esa plantilla. Por ejemplo, si queremos dar 
+    movimiento a un objeto esfera entonces creamos una instancia del objeto en la 
+    room, y podríamos agregar una acción de movimiento al evento Create del objeto.
+    <br><br>
+    Otro ejemplo es el evento "Collision". Este evento es lanzado cuando dos 
+    instancias colisionan. En ese caso hay muchas acciones que se pueden realizar, 
+    como detener el movimiento o invertir su dirección, reproducir un efecto de 
+    sonido o sumar puntos a un marcador. Más ejemplos son el evento "Keyboard" 
+    para detectar la presión de teclas, el evento "Mouse" para detectar los botones
+    del ratón, y el evento "Draw" para dibujar lo que queramos. Todos los eventos 
+    se cubrírán a lo largo del manual.
+    <br><br>
+    Una vez definidos los objetos, es momento de definir las "rooms" donde serán 
+    colocados. Las rooms se pueden usar como nievles en el juego, o para mostrar 
+    información, incluso pueden contener un menú. Existen acciones para ir de una 
+    room a otra; con esas acciones se podrían crear objetos botones que, al ser 
+    presionados, transporten al jugador a un nivel determinado. GMS tiene un editor 
+    para definir esas áreas, y poder ajustar muchos aspectos. Por ejemplo, se 
+    pueden agregar "backgrounds" (fondos), ya sea como una imagen o como un color 
+    plano (esas imágenes de fondo se pueden crear en GMs con su propio editor, o 
+    se pueden cargar desde archivos). Cabe resaltar que si no hay rooms el juego 
+    no puede funcionar.
+    <br><br>
+    Se pueden colocar una o varias instancias de cualquier objeto dentro de 
+    las rooms. Por ejemplo, si se requiere un área grande rodeada por un muro, se 
+    puede definir un objeto muro y poner múltiples instancias de  ese objeto en la 
+    room. Lo mismo se puede hacer con los enemigos, sólo debe crear un objeto 
+    enemigo y poner múltiples instancias en la room, así es posible obtener un 
+    nivel copleto creado con unos cuantos objetos base. Aquí está un ejemplo de 
+    la ventana de edición de rooms.
+    <br>
+    <img class="center" src="http://docs.yoyogames.com/source/dadiospice/images/getting_started_room_image.png">
+    <br>
+    Una vez completado el diseño de rooms, está listo para correr el juego. La 
+    primera habitación mostrada es la primera que aparece en la lista de rooms. 
+    Ahora las instancias dentro de la room cobrarán vida gracias a las acciones 
+    definidas en sus eventos Create y reaccionarán a otras instancias gracias a las 
+    acciones que están en los eventos Collision, también reaccionarán al jugador, 
+    usando las acciones que se encuentran en los eventos de teclado y ratón.
+    <br><br>
+    Esto cubre los elementos más importantes en GMS, pero hay más. Todos juntos son 
+    llamados recursos (resources and assets), y se muestran en la parte izquierda de 
+    la interfaz principal de GMS, en una lista llamada "árbol de recursos". En 
+    seguida se muestra una lista los diferentes tipos recursos:
+    <br><br>
+</p>
+
+<ul>
+    <li><b>Sprites:</b> imágenes, a veces animadas, que se usan para representar objetos</li>
+    <li><b>Sonidos:</b> se pueden usar como música de fondo o efectos de sonido</li>
+    <li><b>Fondos (backgrounds):</b> imágenes estáticas usadas como fondo en las rooms</li>
+    <li><b>Rutas (paths):</b> sirven para mover una instancia por una ruta predefinida</li>
+    <li><b>Scripts:</b> son piezas de código y se pueden usar como funciones</li>
+    <li><b>Shaders:</b> son la combinación de dos programas escritos en un lenguaje especial para crear efectos gráficos</li>
+    <li><b>Fuentes (fonts):</b> se usan para dibujar texto de diferentes estilos</li>
+    <li><b>Líneas de tiempo (time lines):</b> sirven para controlar de forma precisa el momento en que algo debe suceder</li>
+    <li><b>Objetos:</b> son las entidades programambles con las que se construye un juego</li>
+    <li><b>Habitaciones (rooms):</b> son espacios donde se colocan los objetos</li>
+    <li><b>Archivos incluidos (included files):</b> archivos que se pueden exportar al disco</li>
+    <li><b>Extensiones:</b> sirven para extender la funcionalidad de GMS</li>
+    <li><b>Constantes (o macros):</b> una lista de valores constantes con un nombre asignado</li>
+</ul>
+
+<p>
+    <br>
+    <i><b>Nota:</b> Para obtener familiaridad con el uso de GMS, es altamente recomendable 
+    seguir algunos de los tutoriales para principiantes que se pueden ver dentro del 
+    mismo programa. Los puede encontrar en la pestaña "Tutorials" en la pantalla de 
+    inicio de GMS.</i>
+    <br><br>
+</p>
+
+<div class="clear">
+    <div style="float:left">Anterior: <a href="index">Usando GameMaker: Studio</a></div>
+    <div style="float:right">Siguiente: <a href="004_gui">La Interfaz Gráfica de Usuario</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2015 All Rights Reserved</h5>

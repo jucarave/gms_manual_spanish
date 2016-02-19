@@ -1,0 +1,66 @@
+<h1 class="studio">Variables de Instancia</h1>
+
+<h2 class="studio">El alcance de una variable de instancia está limitado a la 
+instancia donde se crea.</h2>
+
+<p>
+    Una variable de instancia se crea dentro dela instancia de un objeto y es 
+    considerada única para esa instancia: muchas instancias del mismo objeto pueden 
+    tener la misma variable, pero cada uno puede guardar un valor distinto, ya que 
+    esas variables son únicas a cada instancia. ¿<i>Cómo</i> se crea una variable de 
+    instancia? Sólamente hay que asignarle un valor, como se muestra a continuación: 
+    <br>
+    <br>
+</p>
+
+<p class="code">
+    pociones = 12;<br>
+    vida = 100;<br>
+    nombre = "Juan Pérez";<br>
+    fuerza = 5.5;<br>
+    armadura = -2;<br>
+</p>
+
+<p>
+    <br>
+    Sólo es necesario proporcionar un nombre y un valor (numérico o alfabético) 
+    para iniciar una variable y dejarla lista para usarse en la instancia del 
+    objeto que se está codificando. Desde luego, estas variables se pueden usar y 
+    modificar dentro de la instancia de distintas maneras, por ejemplo, restar una 
+    cantidad de la variable "vida" en un evento de colisión: 
+    <br>
+</p>
+
+<p class="code">vida -= 5 + armadura;<br></p>
+
+<p>
+    <br>
+    Si la vida "vida" está en 100, su valor cambiará a 97 (100 - (5 + -2) = 97). 
+    Esto es un ejemplo sencillo, se <i>podría</i> reemplazar "armadura" por el valor -2, 
+    pero qué pasa si se usa ese valor en distintos lugares y decides cambiarlo? Se 
+    tendría que ir por todo el código y cambiar cada -2 por el nuevo valor, lo cual 
+    consume tiempo y puede conducir a errores! pero al usar una variable, todo lo 
+    que hay que hacer es reasignarle un nuevo valor, el cual será usado automáticamente 
+    en el código, aumentando la flexibilidad y facilitando la corrección de errores. 
+    Aun si el valor no fuera a cambiar, es más fácil recordar qué uso tiene una variable 
+    llamada "vida" que sólo ver un número.
+    <br>
+    <br>
+    <i>GameMaker: Studio</i> posee además un conjunto de variables internas con las que es importante 
+    familiarizarse, ya que accidentalmente se podría crear una variable con un nombre igual, 
+    lo que probablemente provocaría erores. Las variables internas se muestran con un color 
+    distinto en el editor de código y también aparecen sugeridas en la barra de auto-completar 
+    al fondo. 
+    <br>
+    <br>
+</p>
+
+<p><br></p>
+
+<div class="clear">
+    <div style="float:left">Anterior: <a href="index">Variables y su Alcance</a></div>
+    
+    <div style="float:right">Siguiente: <a href="local_variables">Variables Locales</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2015 All Rights Reserved</h5>

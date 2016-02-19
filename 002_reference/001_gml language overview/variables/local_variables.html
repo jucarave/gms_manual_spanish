@@ -1,0 +1,119 @@
+<h1 class="studio">Variables Locales</h1>
+
+<h2 class="studio">Una variable local se declara, se usa y después se descarta.</h2>
+
+<p>
+    Las variables locales <i>solamente</i> se crean para eventos específicos, cuando dicho 
+    <i>evento</i> finalice, la variable se descarta (La única excepción a esto son los scripts, 
+    donde una variable declarada como local se mantiene local al scri0pt, y luego se descarta). 
+    ¿Por qué habríamos de necesitarla? Las variables ocupan espacio en memoria, y puede 
+    ser que sólamente las usaremos para una operación o función, en tal caso sólo es 
+    necesario tenerlas en memoria sólo el tiempo que sean usadas. Esto mantiene el 
+    código base limpio y ordenado, a la vez que se optimiza el espacio en memoria 
+    para las cosas que son realmente necesarias. Para declarar una variable local 
+    usamos la función <tt>var</tt> de esta manera: 
+    <br>
+    <br>
+</p>
+
+<p class="code">
+    var i, numero, texto;<br>
+    i = 0;<br>
+    numero = 24.5;<br>
+    texto = "Hi there!";<br>
+</p>
+
+<p>
+    <br>
+    Todas las variables del ejemplo anterior se "olvidarán" (desaparecerán de la memoria) 
+    al final del evento (o el script) en que fueron creadas. Debes ser cuidadoso y no dar
+    a una variable local el nombre de una variable de instancia ya creada dentro del 
+    objeto ejecutando el código, y además, no tener la intención de usar el valor de la 
+    variable local fuera del evento donde ha sido declarada. Estas variables son usadas 
+    de manera frecuente, sobre todo en ciclos, para contar iteraciones, o cuando un valor 
+    se usa recurrentemente en una operación que no volverá a repetirse. Aquí un par de ejemplos: 
+    <br>
+    <br>
+</p>
+
+<p class="code">
+    var i = 0;<br>
+    repeat (10)<br>
+    &nbsp;&nbsp;&nbsp;{<br>
+    &nbsp;&nbsp;&nbsp;inventario[i] = 0; <br>
+    &nbsp;&nbsp;&nbsp;i+=1;<br>
+    &nbsp;&nbsp;&nbsp;}<br>
+</p>
+
+<p>
+    <br>
+    El código anterior crea una variable local de nombre "i" y la inicia en cero, 
+    and sets it to 0, todo en la misma línea. En veriones previas de <i>GameMaker</i> era 
+    necesario declarar primero la variable local primero y <i>luego</i> asignarle un valor, 
+    pero en esta versión se puede declarar <i>y</i> asignar un valor al mismo tiempo. En 
+    el ejemplo, el valor de la variable se usa para iniciar un arreglo. Como la 
+    variable "i" no va a ser usada en otras operaciones posteriores, puede tener 
+    un alcance local. Aquí hay otro ejemplo: 
+    <br>
+    <br>
+</p>
+
+<p class="code">
+    var xx,yy;<br>
+    xx = x - 32 +irandom(64);<br>
+    yy = y - 32 +irandom(64);<br>
+    instance_create(xx, yy, obj_blood);<br>
+</p>
+
+<p>
+    <br>
+    Aquí se ha usado la variable local para almacenar coordenadas aleatorias que son 
+    usadas para crear una instancia. Se puede ver que no es estrictamente necesario usar 
+    estas variables, pero para propósitos de claridad y facilidad de uso lo hacemos 
+    así. Es mucho más claro y obvio lo que se está haciendo, que usar código como este: 
+    <br>
+    <br>
+</p>
+
+<p class="code">
+    instance_create(x - 32 + irandom(64), y - 32 + irandom(64), obj_guts);
+</p>
+
+<p>
+    <br>
+    Un detalle acerca de las variables locales: Al ser únicas al evento que las ejecuta, 
+    ¡también es posible usarlas en otras instancias mediante código! Es decir, podemos usar 
+    variables locales para ajustar y cambiar cosas en otras instancias mediante la sentencia 
+    "with()" (hay una sección sobre esto en sección <b>Descripción del GML</b> en el manual). 
+    El código luciría así: 
+    <br>
+    <br>
+</p>
+
+<p class="code">
+    var num = instance_number(obj_Enemy);<br>
+    with (obj_Enemy)<br>
+    &nbsp;&nbsp;&nbsp;{<br>
+    &nbsp;&nbsp;&nbsp;if num&gt;10 instance_destroy();<br>
+    &nbsp;&nbsp;&nbsp;}<br>
+</p>
+
+<p>
+    <br>
+    Este código funciona porque la variable "num"es local al <i>evento</i> (o script) en el 
+    que está contenida, NO A LA INSTANCIA NI EL ENTORNO DE JUEGO, lo que permite usarla 
+    en cualquier función en cualquier objeto siempre y cuando esté en el mismo bloque 
+    de código. 
+    <br>
+    <br>
+</p>
+
+<p><br></p>
+
+<div class="clear">
+    <div style="float:left">Anterior: <a href="index">Variables y su Alcance</a></div>
+    
+    <div style="float:right">Siguiente: <a href="global_variables">Variables Globales</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2015 All Rights Reserved</h5>

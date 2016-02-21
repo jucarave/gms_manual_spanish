@@ -1,0 +1,331 @@
+<h1 class="studio">La Interfaz Gráfica de Usuario (Graphical User Interface - GUI)</h1>
+
+<h2>Esta página describe las opciones disponibles en la GUI de GMS.</h2>
+
+<p>
+    Al iniciar GMS se muestra el siguiente formulario, con varias opciones para 
+    elegir, a menos que se use el Cliente de Steam (ver más abajo).
+    <br>
+    <img class="center" src="http://docs.yoyogames.com/source/dadiospice/images/loadupscreen.png">
+    <br>
+    Si ha comprado GMS desde Steam, al iniciar se mostrará una pantalla con dos 
+    opciones, en la que puede seleccionar <b>Jugar</b> desde la 
+    <a href="steamworkshop">Steam Workshop</a>, o <b>Hacer Juegos</b> con el programa.
+    Si selecciona <b>Jugar</b>, GMS se cerrará y se abrirá el <a href="steamplayer">Steam Player</a>.
+    Si elige <b>Hacer Juegos</b> se presentará la ventana inicial estandar de GMS.
+    <br>
+    <img class="center" src="http://docs.yoyogames.com/source/dadiospice/000_using%20gamemaker/steamstartup.png">
+    <br>
+    En la parte superior de la ventana inicial hay nueve pestañas, que a 
+    continuación se describen brevemente:
+    <br>
+</p>
+
+<ul>
+    <li><b>Welcome (bienvenido):</b> Es lo primero que se muestra al abrir GMS. 
+    En medio se muestran algunos consejos y pistas sobre el uso de GMS, para navegar 
+    entre ellos use los iconos de flechas que están a los lados. En la parte de 
+    abajo se tiene una lista de los proyectos recientes.</li>
+    <br>
+    <li><b>Open (abrir):</b> Aquí se pueden buscar proyectos en el computador y 
+    abrirlos.</li>
+    <br>
+    <li><b>New (nuevo):</b> Aquí puede crear un nuevo proyecto, indicando una carpeta 
+    (directory) y un nombre para ello.</li>
+    <br>
+    <li><b>Import (importar):</b> Aquí puede cargar proyectos comprimidos, como 
+    archivos *.gmz, y también importar editables de juegos creados con otras 
+    versiones de GameMaker, incluyendo GameMaker 6 (*.gm6), GameMaker 7 y 8 (*.gmk), 
+    GameMaker 8.1 (*.gm81), y versiones más antiguas (*.gmd). Cabe señalar, que 
+    cuanto más atigua sea la versión, es más probable que necesite arreglos para 
+    funcionar, esto es debido a los cambios hechos en GameMaker al pasar de los 
+    años. Además se pueden cargar archivos de copia de seguridad (backups) 
+    (*.gb1, *.gb2, etc.).</li>
+    <br>
+    <li><b>Notas de la versión (release notes):</b> En esta pestaña puede ver las 
+    notas de todas las versiones publicadas de GMS. Esas notas listan todos los 
+    cambios y correcciones hechas al programa, y se muestra la versión que está 
+    usando actualmente.</li>
+    <br>
+    <li><b>Demos:</b> Permite ver una lista de proyectos de demostración. Las demos 
+    difieren de los tutoriales en que estas se enfocan en mostrar sólo una función o 
+    concepto, en lugar de dar una explicación más general, y como tal, se recomienda 
+    que tenga un buen nivel de conocimiento de GMS y GML antes de estudiarlas. Estas 
+    demos se descargan usando un archivo RSS, por lo que se necesita una conexión a 
+    internet para acceder a ellas. Puede actualizar la lista haciendo click en el 
+    botón de la parte inferior izquierda de la ventana.</li>
+    <br>
+    <li><b>Tutoriales:</b> Esta pestaña muestra una selección de tutoriales, diseñados 
+    como una introducción al uso de GMS. Se recomienda que los nuevos usuarios sigan 
+    los tutoriales antes de comenzar un proyecto propio. Al igual que las Demos, se 
+    descargan desde una fuente RSS, y se necesita una conexión a internet. Puede 
+    actualizar la lista haciendo click en el botón de la parte inferior izquierda 
+    de la ventana.</li>
+    <br>
+    <li><b>Licencias:</b> Aquí se muestran las licencias de GMS, así como las 
+    licencias de otros productos (proporcionados por terceros).</li>
+    <br>
+</ul>
+
+<h3>Crenado su Primer Proyecto</h3>
+
+<p>
+    Para empezar a crear su primer proyecto, haga click en la pestaña <b>New</b>, 
+    donde puede cargar un proyecto previo o crear uno nuevo. Debe indicar una 
+    carpeta para guardar y un nombre para el proyecto. Dentro de esa carpeta se 
+    crearán otras carpetas y se almacenarán los archivos usados por el juego. Haga 
+    click en <b>Create</b> para generar los archivos iniciales.
+    <br><br>
+</p>
+
+<h3>La GUI</h3>
+
+<p>
+    Una vez creado (o cargado) un proyecto en GMS la interfaz principal se verá 
+    de esta forma:
+    <br>
+    <img class="center" src="http://docs.yoyogames.com/source/dadiospice/images/gui_image.png">
+    <br>
+    Aquí es donde se controla cada aspecto del proyecto. A la izquierda se muestra 
+    el árbol de recursos. Arriba se muestra la barra de menús y una barra de 
+    herramientas para acceder a algunos de los comandos más usados. Describiremos 
+    brevemente los menús y los botones, pero se estudiarán más a fondo en secciones 
+    posteriores del manual. Algo que debe saber es que muchas cosas se pueden hacer 
+    de diferentes maneras en GMS, ya sea con un comando del menú, haciendo click en 
+    un botón de la barra de herramientas, o haciendo click derecho en un recurso. 
+    Esta redundancia existe para que trabaje en la forma que se sienta más cómodo.
+    <br><br>
+    Los usuarios de <b>Steam</b> tienen tres botones adicionales en la barra de 
+    herramientas:
+</p>
+
+<blockquote>
+    <img src="http://docs.yoyogames.com/source/dadiospice/000_using%20gamemaker/gms_play.png"
+    align="middle" alt="Play:"> Abrirá el <a href="steamplayer">Steam Player</a> donde 
+    podrá jugar a los juegos suscritos en el <a href="steamworkshop">Steam Workshop.</a>
+    <br>
+    <img src="http://docs.yoyogames.com/source/dadiospice/000_using%20gamemaker/gms_workshop.png"
+    align="middle" alt="Workshop:"> Abrirá la página de <b>Steam Workshop</b> 
+    de GMS en el programa cliente de <b>Steam</b>.
+    <br>
+    <img src="http://docs.yoyogames.com/source/dadiospice/000_using%20gamemaker/gms_newide.png"
+    align="middle" alt="New IDE:"> Abrirá otra ventana de GMS, con lo que puede 
+    tener dos o más proyectos abiertos al mismo tiempo.
+</blockquote>
+
+<h3>El Árbol de Recursos</h3>
+
+<p>
+    A la izquierda del formulario principal se encuentra el árbol de recursos. Es 
+    una vista en forma de "árbol" de todos los recuros del juego. Funciona en modo 
+    parecido al explorador de Windows. Si un elemento muestra un signo + quiere 
+    decir que contiene otros elementos dentro, al hacer click en el símbolo se 
+    visualizan esos elementos (expandir). Al hacer click en el signo - los elementos 
+    se ocultan de nuevo (colapsar). Se pueden cambiar los nombres de los recursos, 
+    excepto las carpetas del primer nivel, que indican el tipo de recursos que 
+    contienen. Para cambiar un nombre, seleccione un elemento con un click, después 
+    realice otro click en el nombre, ahora puede editar el nombre, al terminar 
+    presione ENTER o haga click en un lugar vacío. Al hacer doble click rápidamente 
+    se abrirá la ventana de propiedades del recurso. Use el click derecho para abrir 
+    un menú contextual relacionado al recurso, el menú contextual contiene la mayoría 
+    de los comandos del <a href="dropdownmenus/editmenu">menú Edit</a>, donde se 
+    puede copiar, agregar, remover, o ver el recurso seleccionado. Puede ver una 
+    lista de todos los menús contextuales en esta sección:
+</p>
+
+<ul>
+    <li><a href="rightclickmenus">Menús con Click Derecho</a></li>
+    <br>
+</ul>
+
+<p>
+    Puede cambiar el orden de los recursos, haciendo click en un recurso en 
+    específico y arrastrando al lugar apropiado, dentro de su grupo de recursos. 
+    También puede filtrar el árbol de recursos para mostrar solamente los que tienen 
+    un nombre que coincide con el texto excrito en la parte inferior del árbol.
+    <br>
+    <img class="center" src="http://docs.yoyogames.com/source/dadiospice/images/gui_search.png">
+</p>
+
+<h3>La Barra de Herramientas</h3>
+
+<p>
+    La Barra de Herramientas de GMS contiene botones para crear recursos, así como 
+    una selección de botones adicionales para crear un nueo proyecto, abrir un 
+    proyecto, guardar, crear un ejecutable, abrir los ajustes globales del juego y 
+    abrir el archivo de ayuda. Todos esos comandos se pueden realizar a través de 
+    los menús de arriba, o usando ciertas combinaciones de teclas.
+    <br><br>
+    Hay dos botones que se deben resaltar:
+    <br><br>
+    <img src="http://docs.yoyogames.com/source/dadiospice/000_using%20gamemaker/nginxstop.png" 
+    align="left"> <b>Stop Web Server:</b> Este botón se puede usar para cancelar 
+    la compilación de un juego, o en ciertos tipos de compilaciones, detener la 
+    ejecución del juego depués de haber sido compilado.
+    <br><br><br>
+    <img src="http://docs.yoyogames.com/source/dadiospice/000_using%20gamemaker/clear_cache.png" 
+    align="left"> <b>Limpiar Caché de Recursos Compilados:</b> Al presionar este 
+    botón se limpiará la caché de recusos para el copilador. GMS almacena imágenes, 
+    sonidos, scripts y demás resursos en una caché par ahorrar tiempo de compilación 
+    al probar un juego, así únicamente se deben compilar aquellas cosas que han 
+    cambiado desde la última compilación. Sin embargo, la caché se puede corromper 
+    con el tiempo, ocasionado que el juego no se muestre correctamente, en otras 
+    ocasiones se busca hacer una prueba completa sin usar la caché previa, en 
+    esos casos es útil este botón.
+    <br><br>
+</p>
+
+<h3>La Plataforma de Compilación (Compile Target)</h3>
+
+<p>
+    Este menú despegable permite elegir la plataforma para la cual se compilará y 
+    probará un juego. De esta forma se puede cambiar rápidamente entre diferentes 
+    módulos instalados en GMS y estar seguros de que el proyecto funciona como 
+    debería en todas las plataformas. Las plataformas disponibles son:
+</p>
+
+<div class="compat">
+<table>
+    <tr>
+    <td>Windows</td>
+    <td>se incluye en todas las versiones de GMS</td>
+    </tr>
+    
+    <tr>
+    <td>Steam Workshop</td>
+    <td>se incluye en todas las versiones de GMS compradas a través de Steam</td>
+    </tr>
+    
+    <tr>
+    <td>MacOSX</td>
+    <td>módulo adicional para la versión Profesional</td>
+    </tr>
+    
+    <tr>
+    <td>Windows 8 JavaScript</td>
+    <td>módulo adicional para la versión Profesional</td>
+    </tr>
+    
+    <tr>
+    <td>Windows 8 Nativo</td>
+    <td>módulo adicional para la versión Profesional</td>
+    </tr>
+    
+    <tr>
+    <td>HTML5</td>
+    <td>módulo adicional para la versión Profesional</td>
+    </tr>
+    
+    <tr>
+    <td>Ubuntu (Linux)</td>
+    <td>módulo adicional para la versión Profesional</td>
+    </tr>
+    
+    <tr>
+    <td>iOS</td>
+    <td>módulo adicional para la versión Profesional</td>
+    </tr>
+    
+    <tr>
+    <td>Android</td>
+    <td>módulo adicional para la versión Profesional</td>
+    </tr>
+    
+    <tr>
+    <td>Tizen</td>
+    <td>módulo adicional para la versión Profesional</td>
+    </tr>
+    
+    <tr>
+    <td>Windows Phone</td>
+    <td>módulo adicional para la versión Profesional</td>
+    </tr>
+    
+    <tr>
+    <td>GameMaker: Player</td>
+    <td>módulo adicional para todas las versiones</td>
+    </tr>
+</table>
+</div>
+
+<p>
+    Note que los módulos adicionales sólo se pueden comprar para la versión 
+    Profesional de GMS, y si ha comprado GMS a través de Steam tendrá un módulo más 
+    para compilar, este es Steam Workshop. Este módulo permite publicar juegos para 
+    Windows directamente en Steam. Más información sobre este módulo se encuentra 
+    <a href="steamworkshop">aquí</a>.
+    <br><br>
+</p>
+
+<h3 class="studio">Configuraciones</h3>
+
+<p>
+    Esta lista sólo está disponible en la versión Profesional, y permite seleccionar 
+    la configuración de GMS. Al lado hay un botón que dice "Mange", persionando este 
+    botón se abre la Ventana de Configuraciones, que permite agregar, remover y 
+    renombrar configuraciones. Para más información sobre este tema vea esta sección:
+</p>
+
+
+<blockquote>
+    <ul>
+        <li><a href="../001_advanceduse/007_configurations">Uso Avanzado - Configuraciones</a></li>
+    </ul>
+</blockquote>
+
+<h3>Espacio de Trabajo</h3>
+
+<p>
+    En esta área se editan los recursos, se construyen las escenas, se trabaja 
+    con los objetos, el código y todos los recursos.
+    <br><br>
+</p>
+
+<h3>Menús Principales</h3>
+
+<p>
+    Se encuentran en la parte superior. Cada uno se explica a detalle en las 
+    páginas listadas a continuación:
+    <br><br>
+</p>
+
+<blockquote>
+    <ol>
+        <li><a href="dropdownmenus/file">File (archivo)</a></li>
+        <li><a href="dropdownmenus/edit">Edit (editar)</a></li>
+        <li><a href="dropdownmenus/window">Window (ventana)</a></li>
+        <li><a href="dropdownmenus/resources">Resources (recursos)</a></li>
+        <li><a href="dropdownmenus/scripts">Scripts</a></li>
+        <li><a href="dropdownmenus/run">Run (ejecutar)</a></li>
+        <li><a href="dropdownmenus/account">Account (cuenta)</a></li>
+        <li><a href="dropdownmenus/player">Player</a></li>
+        <li><a href="dropdownmenus/market">Marketplace</a></li>
+        <li><a href="dropdownmenus/help">Help (ayuda)</a></li>
+    </ol>
+</blockquote>
+
+<h3>Buscar en la Base de Conocimientos (Knowledge Base)</h3>
+
+<p>
+    Hay una caja de búsqueda en la parte superior derecha de la interfaz principal:
+    <br>
+    <img class="center" src="http://docs.yoyogames.com/source/dadiospice/images/gui_search_bar.png">
+    <br>
+    Si busca información más detallada sobre un tema que el manual no cubre, o 
+    piensa que hay un bug, entonces escriba unas palabras aquí para buscar en la 
+    <a href="http://help.yoyogames.com/home" target="_blank">Base de Conocimeintos
+    de YoYo Games</a>, se abrirá una nueva pestaña en su navegador de internet 
+    mostrando una lista de los tópicos disponibles. Por ejemplo, si requiere más 
+    información sobre publicidad, simplemente escriba "ads" en esta caja de búsqueda 
+    y presione ENTER, entonces se abrirá esta página: 
+    <a href="http://help.yoyogames.com/forums/22239281" target="_blank">
+    List of Ads Tutorials.</a>
+    <br><br>
+</p>
+
+<div class="clear">
+    <div style="float:left">Anterior: <a href="index">Usando GameMaker: Studio</a></div>
+    <div style="float:right">Siguiente: <a href="004_gui">La Interfaz Gráfica de Usuario</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2015 All Rights Reserved</h5>

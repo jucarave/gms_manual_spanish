@@ -1,0 +1,135 @@
+<h1 class="studio">Variables Globales</h1>
+
+<h2 class="studio">Esta sección explica que son las variables globales y como usarlas.</h2>
+
+<p>
+    En términos simples, una variable global es un tipo de variable que una vez 
+    declarada no pertenece a ninguna instancia, pero puede ser leída por todas ellas. 
+    Las variables globales deben ser declaradas, tal como sucede con las variables 
+    locales, pero a diferencia de éstas, una variable global permanece en memoria 
+    hasta el final del juego. Por ejemplo, se puede crear una variable global para 
+    llevar un registro del número de balas del jugador y sencillamente actualizar
+    esta variable en distintos puntos del juego. Una variable global no pertenece a 
+    una instancia en particular y puede ser leída, cambiada y usada por todas las 
+    instancias en cualquier momento, pero cualquier cambio hecho a la variable es 
+    también "global", es decir, el cambio afecta a todas las instancias que usen 
+    dicha variable. Veamos un ejemplo de esto: 
+    <br>
+    <br>
+</p>
+
+<p class="code">
+    global.food = 5;<br>
+</p>
+
+<p>
+    <br>
+    hemos creado una nuava variable llamada "food" la cual ha sido declarada como "global.food" 
+    está disponible para cualquier instancia, por ejemplo, podría existir un objeto "food" 
+    contra el que el jugador colisione, y en ese evento de colisión tendríamos: 
+    <br>
+    <br>
+</p>
+
+<p class="code">global.food +=1;<br></p>
+
+<p>
+    <br>
+    Podríamos tener otro objeto que dibuje el valor de "food", de esta manera: 
+    <br>
+    <br>
+</p>
+
+<p class="code">
+    draw_text(32, 32, "food = " + string(global.food));<br>
+</p>
+
+<p>
+    <br>
+    Mediante variables globales podemos cambiar valores y ver reflejados esos cambios 
+    en todas las instancias que hagan referencia a esas variables. De la misma manera 
+    que con las variables <i>locales</i>, hay que tener cuidado de no nombrar de igual manera 
+    que alguna variable de instancia, ya que esto causaría problemas y se facilitaría 
+    la aparición de errores en el juego. De forma general, deberías tener siempre crear
+    todas las variables globales en un script que se ejecute al inicio del juego 
+    (por ejemplo, en el evento Room Start), de este modo las variables estarán listas
+    para ser usadas durante todo el juego y al tenerlas todas juntas tendrás un acceso
+    fácil en caso de que necesites hacer algún cambio.
+    <br>
+    <br>
+    <i>GameMaker: Studio</i> también posee una colección de variables globales "predefinidas", 
+    por lo que se las debe tener en cuenta para no nombrar de la misma manera a variables 
+    de instancia o a variables globales propias. Sin embargo pestas variables son fáciles 
+    de detectar ya que se muestran en distinto color en el editor de código y aparecen 
+    en la barra de auto-completado en la parte inferior. La mayoría de las variables 
+    globales predefinidas son muy específicas y rara vez se les utiliza, pero hay tres
+    variables en particular que son muy útiles y comunes, por lo que se describen a 
+    continuación: 
+</p>
+
+<blockquote>
+    <ol>
+        <li><a href="score">score</a></li>
+        
+        <li><a href="health">health</a></li>
+        
+        <li><a href="lives">lives</a></li>
+        
+        <li><a href="async_load">async_load</a></li>
+    </ol>   
+</blockquote>
+
+<h3 class="studio">globalvar</h3>
+
+<p>
+    El siguiente método también puede usarse para declarar variables globales,
+    pero <i><b>solo está disponible por temas de retrocompatibilidad</b></i>, y
+    no es recomendado que utilices este método ya que es posible que futuras
+    versiones de <i>GameMaker: Studio</i> no lo soporten.
+    <br>
+    <br>
+    El segundo método para crear variables globales es utilizando la palabra 
+    reservadaa <tt>globalvar</tt>, del mismo modo que declaras variables locales
+    utilizando la palabra reservada <tt>var</tt>. Por ejemplo: 
+    <br>
+    <br>
+</p>
+
+<p class="code">
+    globalvar food;<br>
+    food = 5;<br>
+</p>
+
+<p>
+    <br>
+    Una vez se declara de esta manera la variable es considerada global y no 
+    requiere usar el prefijo "global." - lo que también significa que es mucho 
+    más dificil identificar variables globales en el código y es mucho más fácil 
+    que la variable colisione con alguna otra variable local con el mismo nombre - 
+    para acceder a las variables globales declaradas de esta forma utilizamos
+    hacemos lo siguiente:
+</p>
+
+<p class="code">
+    food += 2;<br>
+</p>
+
+<p>
+    <br>
+    o:<br>
+    <br>
+</p>
+
+<p class="code">
+    draw_text(32, 32, "food = " + string(food));<br>
+</p>
+
+<p><br></p>
+
+<div class="clear">
+    <div style="float:left">Back: <a href="index">Variables y su alcance</a></div>
+    
+    <div style="float:right">Next: <a href="instance_variables">Variables de Instancia</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2015 All Rights Reserved</h5>

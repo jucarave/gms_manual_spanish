@@ -1,0 +1,57 @@
+<h1 class="studio">async_load</h1>
+
+<h2 class="studio">Variable global que contiene un DS map el cual es usado en eventos asíncronos.</h2>
+
+<h3 class="studio">Sintaxis:</h3>
+
+<p class="code">async_load;</p>
+
+<p><br></p>
+
+<p><b>Retorna:</b> Real</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Descripción</h3>
+
+<p>
+    Esta variable tiene un alcance <b>global</b> y contiene un 
+    <a href="../../data_structures/ds_maps/index">DS map</a> cuando es usado en los
+    <a href="../../../001_advanced_use/more_about_async_events/index">Eventos Asíncronos</a>
+    y -1 cuando se usa en otro tipo de eventos. El contenido del DS map depende de el tipo 
+    de evento asíncrono que se ejecutó, revisa las páginas individuales sobre los eventos 
+    asíncronos para más detalle.
+    <br>
+    <br>
+</p>
+
+<p><br></p>
+
+<h3 class="studio">Ejemplo:</h3>
+
+<p class="code">if ds_map_find_value(async_load, "id") == back<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;if ds_map_find_value(async_load, "status") &gt;=
+0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background_index[0] = back<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>
+    El código anterior es tomado de una carga asíncrona de Imagenes, primero se 
+    revisa el ID del DS map del <tt>async_load</tt>, luego revisa el estado de 
+    la carga. Si el valor es mayor o igual a 0 entonces el resultado del llamado
+    será utilizado como una nueva imágen en el background index del room actual.
+</p>
+
+<p><br></p>
+
+<div class="clear">
+    <div style="float:left">Anterior: <a href="global_variables">Variables Globales</a></div>
+    
+    <div style="float:right">Siguiente: <a href="score">score</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2015 All Rights Reserved</h5>

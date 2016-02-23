@@ -1,0 +1,56 @@
+<h1 class="studio">lives</h1>
+
+<h2 class="studio">Variable global para almacenar el número de vidas.</h2>
+
+<h3 class="studio">Sintaxis:</h3>
+
+<p class="code">lives;</p>
+
+<p><br>
+</p>
+
+<p><b>Retorna:</b> Real</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Descripción</h3>
+
+<p>
+    Esta variable tiene un alcance <b>global</b> y contiene un valor número el cual 
+    se utiliza generalmente para controlar el número de vidas del jugador. Sin embargo
+    este no es siempre el caso - Solo porque la variable se llame "lives" (vidas)
+    no significa que deba usarse para controlar las vidas... Se puede usar para
+    almacenar cualquier valor número útil para el juego.
+    <br>
+    <br>
+</p>
+
+<p><br></p>
+
+<h3 class="studio">Ejemplo:</h3>
+
+<p class="code">if place_meeting(x, y, obj_Enemy_Bullet)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;health -= 10;<br>
+&nbsp;&nbsp;&nbsp;if health &lt;= 0 lives -=1;<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>
+    El ejemplo anterior comprueba si hay una colisión con la instancia del 
+    objeto tipo "obj_Enemy_Bullet", y de ser así, remueve 10 puntos de salud
+    al jugador, luego comprueba si este valor es igual o menor a 0. Si ese es 
+    el caso entonces se elimina 1 vida de la variable global "lives".
+    <br>
+    <br>
+</p>
+
+<p><br></p>
+
+<div class="clear">
+    <div style="float:left">Anterior: <a href="global_variables">Variables Globales</a></div>
+    
+    <div style="float:right">Siguiente: <a href="async_load">async_load</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2015 All Rights Reserved</h5>

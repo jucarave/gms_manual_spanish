@@ -1,0 +1,53 @@
+<h1 class="studio">health</h1>
+
+<h2 class="studio">Variable global para almacenar los puntos de salud.</h2>
+
+<h3 class="studio">Sintaxis:</h3>
+
+<p class="code">health;</p>
+
+<p><br>
+</p>
+
+<p><b>Retorna:</b> Real</p>
+
+<p><br></p>
+
+<h3 class="studio">Descripción</h3>
+
+<p>
+    Esta variable tiene un alcance <b>global</b> y se usa para almacenar un valor numérico 
+    que generalmente representa la salud del jugador health, pero hay que tener en 
+    cuenta que esto no necesariamente tiene por que ser así. A pesar de que el nombre 
+    es "health", se puede usar para almacenar cualquier valor numérico útil para el 
+    juego. 
+    <br>
+    <br>
+</p>
+
+<p><br></p>
+
+<h3 class="studio">Ejemplo:</h3>
+
+<p class="code">if place_meeting(x, y, obj_Enemy)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;health -= 10;<br>
+&nbsp;&nbsp;&nbsp;if health &lt;= 0 instance_destroy();<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>
+    El código anterior revisa si hay una colisión con el objeto indexado en la variable 
+    "obj_Enemy", y de haberla, resta 10 puntos de la variable global health y luego 
+    determina si el valor de dicha variable es menor o igual a cero Si se cumple esta 
+    condición, la instancia que ejecuta el código se destruye.
+</p>
+
+<p><br></p>
+
+<div class="clear">
+    <div style="float:left">Anterior: <a href="global_variables">Variables Globales</a></div>
+    
+    <div style="float:right">Siguiente: <a href="lives">lives</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2015 All Rights Reserved</h5>

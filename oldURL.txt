@@ -1,1 +1,5 @@
+# Manual YoYoGames
 http://docs.yoyogames.com/source/dadiospice/
+
+# Manual Español
+http://www.inventati.org/estupidezartificial/manual.html

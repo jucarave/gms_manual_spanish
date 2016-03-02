@@ -1,0 +1,97 @@
+<h1 class="studio">Accediendo a variables desde otras instancias</h1>
+
+<h2 class="studio">Se describen varios métodos para llamar a variables en otras instancias.</h2>
+
+<p>
+    Anteriormente se describió cómo crear y usar <a href="variables/index">variables</a> dentro de una instancia, 
+    o de manera global, ¿pero qué pasa cuando desde una instancia se quiere acceder 
+    a una variable en otra instancia distinta? Hay muchos casos en que se presenta 
+    esta situación, por ejemplo, si en un evento de colisión con una bala se quisiera
+    saber cuánto daño causa la bala, leyendo una de sus variables, o si se desea detener 
+    el movimiento de todas las balas en la habitación; o mover al protagonista a una 
+    posición determinada, por mencionar algunas. Veamos cómo lograrlo mediante GML. 
+    <br>
+    <br>
+    Uno de los métodos mas comunes para acceder y cambiar variables en otra instancia
+    consiste en usar el nombre del objeto como identificador, seguido de 
+    un punto ".", seguido del nombre de la variable que se quiere cambiar o asignar. 
+    Es decir: 
+</p>
+
+<p class="code">obj_ball.speed = 0;<br></p>
+
+<p>
+    <br>
+    Lo que hace el código anterior es ajustar la velocidad de TODAS las instancias del 
+    objeto "obj_ball", así que este método permite cambiar una variable en todas las 
+    instancias de algún objeto a no ser de que estes utilizando una de las plataformas
+    de exportación de <b>JS</b> o <b>HTML5</b> en cuyo caso afectara solamente a una instancia,
+    pero no tienes forma de saber a cual instancia - así que si necesitas acceder a todas las 
+    instancias de un objeto, es mejor utilizar el comando <a href="401_18_with"><tt>with</tt></a>,
+    ya que es 100% compatible con todas las plataformas. En general, este formato debe ser usado
+    solamentecuando cuando tienes unan sola instancia del objeto en el room, o (como veras
+    a continuación) cuando usted tenga el ID de la instancia.
+    <br>
+    <br>
+    También se puede acceeder a una instancia individual cuando se tienen mutiple instancias del
+    mismo objeto utilizando el <b>id de la instancia</b> En tal caso, el principio es el mismo, 
+    excepto que en lugar de usar el nombre del objeto como identificador de todas sus 
+    instancias, usamos el identificador (ID) de la instancia para decirle a <i>GameMaker: Studio</i>
+    que sólo queremos manejar una sola instancia. 
+    <br>
+    <br>
+    Bien, ¿pero qué es identificador de la instancia? Es un número de identificación único asignado a 
+    cada instancia creada en el juego. Cuando se coloca una instancia en una habitación desde el editor 
+    de habitaciones, este identificador aparece en la parte baja de la pantalla si se posa el puntero del 
+    ratón sobre la instancia, pero de igual manera, si se crea una instancia mediante código, también 
+    ella posee su identificador único. El id de instancia es siempre mayor o igual a 10,000 (diez mil), 
+    y este número puede ser usado también como identificador al lado izquierdo del punto. 
+</p>
+
+<blockquote>
+    <i><b>Nota:</b> El punto es interpretado como un punto decimal en un número real, así que 
+    para evitar esto, ¡hay que encerrar el id dentro de paréntesis! </i>
+</blockquote>
+
+<p>El siguiente código es un ejemplo de como debería ser escrito:<br><br></p>
+
+<p class="code">(100012).speed = 0;<br></p>
+
+<p><br>
+Note that you cannot use the special <a href="keywords.html">keyword</a> "<tt>all</tt>" with this method to
+target all instances, but you can use the keywords "<tt>other</tt>"
+and "<tt>self</tt>" without issues. You can also use variables, as
+long as the variable in question has stored a valid <b>instance
+id</b>. The following examples illustrate this...<br>
+<br>
+Using a variable to set an instance value:<br>
+<br></p>
+
+<p class="code">var inst = instance_position(mouse_x, mouse_y,
+all);<br>
+if instance_exists(inst) &nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;inst.speed = 0;<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>
+    <br>
+    El código anterior utiliza la función <tt>instance_exists()</tt>. 
+    Esto es porque usar el método del punto para acceder o cambiar el 
+    valor de otras instancias va a causar un error y detener el juego 
+    si no hay ninguna instancia existente. Del mismo si existe alguna 
+    posibilidad de que la instancia pueda ser destruida, desactivada,
+    o removida de la habitación deberías siempre utilizar este método 
+    para revisar si existe alguna instancia del objeto.
+    <br>
+    <br>
+</p>
+
+<p><br></p>
+
+<div class="clear">
+    <div style="float:left">Anterior: <a href="index">Descripción del GML</a></div>
+    
+    <div style="float:right">Siguiente: <a href="keywords">Palabras reservadas</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2015 All Rights Reserved</h5>

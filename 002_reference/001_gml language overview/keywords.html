@@ -1,0 +1,231 @@
+<h1 class="studio">Palabras reservadas</h1>
+
+<h2 class="studio">Esta sección muestra las diferentes palabras claves que pueden ser usadas en GameMaker: Studio</h2>
+
+<p>
+    Con el fin de facilitar algunas cosas en <i>GameMaker: Studio</i>, se puede 
+    hacer uso de una de las multiples <b>keywords</b> (palabras reservadas) en sus
+    scripts y eventos. Estas palabras son usadas principalmente para identificar 
+    instancias. Tenga en cuenta que todas las palabras reservadas están representados
+    por números negativos, así que debe tener cuidado cuando le asigne estos valores
+    a otras variables ya que puede obtener resultados inesperados. Del mismo modo <b>no 
+    es recomendado</b> utilizar los valores directamente en su código en vez de las 
+    palabras reservadas ya que puede causar problemas mas adelante.
+    <br>
+    <br>
+</p>
+
+<h3 class="studio">self</h3>
+
+<div class="compat">
+    <table>
+        <tbody>
+            <tr>
+                <th>Keyword</th>
+                <th>Descripción</th>
+                <th>Valor</th>
+            </tr>
+                
+            <tr>
+                <td>self</td>
+                <td>La instancia actual que está ejecutando el bloque de código.</td>
+                <td>&nbsp;&nbsp;&nbsp;-1</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>
+    <tt>self</tt> puede ser usado para identificar la instancia que está ejecutando 
+    el bloque de código actual. Siempre retorna -1 el cual <i>GameMaker: Studio</i> 
+    interpreta como el ID unico de la instancia. De forma general no deberías 
+    necesitar utilizar este keyword, ya que puedes efectuar la misma tarea de una 
+    forma más eficiente y apropiada utilizando otras keywords y funciones, esta
+    variable solamente existe para dar soporte a versiones antiguas de código.<br>
+    <br>
+</p>
+
+<h3 class="studio">other</h3>
+
+<div class="compat">
+    <table>
+        <tbody>
+            <tr>
+            <th>Keyword</th>
+            <th>Descripción</th>
+            <th>Valor</th>
+        </tr>
+        
+        <tr>
+            <td>other</td>
+            <td>
+                La otra instancia involucrada en un evento de colisión, o la otra instancia 
+                de una función <a href="401_18_with.html"><tt>with</tt></a>
+            </td>
+            <td>&nbsp;&nbsp;&nbsp;-2</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>
+    existen dos diferentes maneras de utilizar <b>other</b> para hacer referencia a una 
+    instancia: Cuando es usado en una función <tt><b>with</b></tt> (explicado <a href="401_18_with">aquí</a>)
+    o cuando es usado en un <a href="../../000_using_gamemaker/events/collision_event">evento de colisión</a>,
+    esta sección se enfocará en el segundo tipo.
+    <br>
+    <br>
+    Un evento de colisión solo puede ocurrir entre dos instancias. Usted <i>puede</i> 
+    tener multiples colisiones entre multiples instancias, pero todas ellas son resueltas
+    por <i>GameMaker: Studio</i> de forma 1-a-1, con la instancia que tiene el evento de 
+    colisión y la "otra" instancia que esta involucrada. Supongamos que tienes un objeto
+    jugador, multiples objetos de enemigos y multiples objetos de balas que el enemigo puede 
+    disparar hacia usted. Puedes asignar a cada enemigos una sola instancia de bala pero con 
+    un valor aleatorio de daño cuando se crea, por ejemplo: 
+    <br>
+    <br>
+</p>
+
+<p class="code">var nnn;<br>
+nnn = instance_create(x, y, obj_Bullet);<br>
+nnn.damage = 5 + irandom(5);<br>
+nnn.speed = 8;<br>
+nnn.direction = point_direction(x, y, obj_Player.x,
+obj_Player.y);<br></p>
+
+<p>
+    <br>
+    Esto le asignara a cada instancia de la bala un valor de daño diferente. Pero,
+    ¿qué hay del objeto del jugador? ¿Cómo detectamos cuando daño debe recibir?
+    utilizando <b><tt>other</tt></b> en el evento de colisión: 
+    <br>
+    <br>
+</p>
+
+<p class="code">hp -= other.damage;<br>
+if hp &lt;= 0 instance_destroy();<br></p>
+
+<p>
+    <br>
+    El código anterior va a reducir la salud del jugador con la cantidad de daño 
+    de la <i>otra</i> instancia, luego va a revisar si la salud es menor o igual a 
+    0 entonces va a destruir la instancia del objeto del jugador. Tenga encuenta que
+    <b>other</b> <i>solo puede ser utilizado de esta forma en los eventos de colisión </i>
+</p>
+
+<h3 class="studio">all</h3>
+
+<div class="compat">
+    <table>
+        <tbody>
+            <tr>
+                <th>Keyword</th>
+                <th>Descripción</th>
+                <th>Valor</th>
+            </tr>
+            
+            <tr>
+                <td>all</td>
+                <td>Todas las instancias activas actualmente en el room.</td>
+                <td>&nbsp;&nbsp;&nbsp;-3</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>
+     <b>all</b> es usado para ejecutar una función o para revisar todas las instancias 
+     activas en el room (instancias desactivadas no pueden ser revisadas o accedidas). 
+     Usted <b>no puede</b> usar <tt>all</tt> para acceder variables en otras instancias 
+     con el método del punto (<a href="401_05_addressing">Accediendo variables</a>), 
+     pero puedes hacerlo cuando lo utilizas con la función <a href="with"><tt>with()</tt></a>,
+     por ejemplo: 
+     <br>
+     <br>
+</p>
+
+<p class="code">with (all)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;speed = 0;<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>
+    <br>
+    El código anterior colocará la velocidad de todas las instancias en la habitación
+    a el valor 0. También puedes utilizar <tt>all</tt> dentro de funciones para hacer 
+    referencia a todas las instancias de la habitación, por ejemplo: 
+    <br>
+    <br>
+</p>
+
+<p class="code">inst = instance_position(mouse_x, mouse_y, all);
+//Revisa en todas las instancias si alguna esta debajo del cursor<br>
+<br>
+if collision_line(x, y, mouse_x, mouse_y, all, false, true) {}
+//Revisa si alguna instancia de todas en la habitación esta en colisión con una linea<br>
+<br>
+mp_grid_add_instances(grid, all, false); 
+//Añade todas las isntancias del room a un grid para planeación de movimiento<br>
+<br></p>
+
+<p>
+    <br>
+    <tt>all</tt> es una keyword muy útil y puede ser utilizada en multiples sitaciones 
+    en su código y acciones, por lo general para reducir la cantidad de código que necesitas
+    escribir para alcanzar el mismo efecto.
+    <br>
+    <br>
+</p>
+
+<h3 class="studio">noone</h3>
+
+<div class="compat">
+    <table>
+        <tbody>
+            <tr>
+                <th>Keyword</th>
+                <th>Descripción</th>
+                <th>Valor</th>
+            </tr>
+            
+            <tr>
+                <td>noone</td>
+                <td>Ninguna instancia.</td>
+                <td>&nbsp;&nbsp;&nbsp;-4</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>
+    Puede parecer extraño, pero en muchas ocaciones mientras programas tus juegos
+    vas a encontrar que necesitas saber si no hay instancias en algún lugar del room,
+    o en una colisión, etc... En esos casos puedes utilizar este keyword, por ejemplo: 
+    <br>
+    <br>
+</p>
+
+<p class="code">if instance_nearest(x, y, obj_enemy) != noone<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;//Haga algo si no hay un enemigo cerca<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>
+    <br>
+    En este ejemplo, la función <tt>instance_nearest()</tt> va a retornar ya sea
+    <tt>noone</tt> o el ID unico de la instancia mas cercana. Basicamente, cada 
+    vez que necesites preguntar por una instancia, puedes esperar obtener un 
+    <tt>noone</tt> o un ID unico retornado.
+    <br>
+    <br>
+</p>
+
+<p><br></p>
+
+<div class="clear">
+    <div style="float:left">Anterior: <a href="index">Descripción del GML</a></div>
+    
+    <div style="float:right">Siguiente: <a href="data_types">Tipo de Datos</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2015 All Rights Reserved</h5>

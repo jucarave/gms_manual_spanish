@@ -1,0 +1,261 @@
+<h1 class="studio">Tipos de Datos</h1>
+
+
+<h2 class="studio">Esta sección cubre los diferentes tipos de datos reconocidos por GameMaker: Studio.</h2>
+
+<p>
+    En secciones previas hemos visto <a href="variables/index">variables y su alcance</a> 
+    pero se ha dicho muy poco acerca de las diferencias en los <b>tipo de datos</b> que 
+    pueden aceptar las variables. De tal modo que este capitulo va a explicar los diferentes 
+    tipos que pueden ser almacenados y para que pueden ser usados.
+    <br>
+    <br>
+    Antes de continuar, vamos a explicar brevemente que son los "tipos de datos".
+    Las variables usted crea se utilizan para guardar información, y cuando llamas
+    una función de <i>GML</i>, también puede retornar información. Sin embargo esta
+    información viene en diferentes "sabores", por ejemplo puede ser un número real
+    o puede ser una cadena de texto. Estos diferentes tipos de valores son llamados
+    <b>tipo de datos</b>, en <i>GML</i> existen los siguientes:
+</p>
+
+<ul>
+    <li>
+        <tt>string</tt> - Un string es una cadena de caracteres encapsulados entre 
+        comillas sencillas ' o dobles ". Por ejemplo "The Quick Brown Fox! 123" es 
+        un string.
+    </li>
+    
+    <li>
+        <tt>real</tt> - Un número real es simplemente un decimal o un número entero.
+    </li>
+    
+    <li>
+        <tt>array</tt> - Un array es una variable que guarda valores usando indices 
+        consecutivos.
+    </li>
+    
+    <li>
+        <tt>boolean</tt> - Un boolean es un valor que solo puede contener los valores
+        <tt>true (verdadero)</tt> o <tt>false (falso)</tt>.
+    </li>
+    
+    <li>
+        <tt>pointer</tt> - Un pointer es un tipo de dato que "apunta" a un espacio de 
+        la memoria.
+    </li>
+    
+    <li>
+        <tt>enum</tt> - Un enum es una colección de constantes que se guardan en una 
+        tipo de variable personalizada.
+    </li>
+    
+    <li>
+        <tt>undefined</tt> - Este es un valor especial el cual es retornado cuando 
+        el valor que usted esta buscando no puede ser encontrado.
+    </li>
+</ul>
+
+<h3 class="studio">Cadenas de texto (Strings)</h3>
+
+<p>
+    Un string es simplemente cualquier texto que ha sido colocado dentro de comillas
+    (ya sean sencillas '...' o dobles "..."). Usted puede hacer ciertas operaciones 
+    con strings, por ejemplo concatenar dos strings para crear un string más largo,
+    también puede cambiar las propiedades del string e incluso extraer números reales
+    de ellos. Puede encontrar más información sobre estas funciones aquí: 
+    <a href="../strings/index">Referencia - Strings</a>
+    <br>
+    <br>
+</p>
+
+
+<h3 class="studio">Números Reales</h3>
+
+
+<p>
+    Los números reales son cualquier valor que no son strings u otro tipo de dato,
+    por ejemplo: 124, 45639.566546456, 0, -45.5, etc... Todos estos son ejemplo de 
+    números reales. Todos los números reales se guardan con el formato de punto
+    flotante de 32bit (incluso para los valores enteros), así que puedes encontrar
+    ciertos problemas con el redondeo de cifras. Para más información sobre esto y
+    otras funciones relacionadas con los números, revise: <a href="../maths/real_valued_functions/index">Referencia - Números Reales</a>.
+    <br>
+    <br>
+    Tenga en cuenta que todas las variables creadas en GameMaker se guardan como un 
+    número flotante de presición double, pero usted puede utilizar otros formatos
+    cuando utiliza extensiones. Estas se pueden pasar a GameMaker: Studio desde
+    una extensión y pueden ser validadas luego utilizando la función <tt>is_</tt>
+    indicada, la cual aparece al final de esta página.
+    <br>
+    <br>
+</p>
+
+<h3 class="studio">Arrays</h3>
+
+<p>
+    Un array es un tipo de dato especial el cual puede utilizarse para almacenar
+    multiples valores. Usted asigna el array a una variable, y entonces "coloca"
+    los valores en los diferentes indices del array. Este array puede entonces 
+    ser pasado a scripts y funciones del mismo modo que otra variable, sin embargo
+    si usted modifica el array dentro de la función esta se convertira en una 
+    copia del array original y entonces necesita ser retornado a la variable del 
+    array original para que los valores puedan ser actualizados. Para más información 
+    sobre los arrays, revise <a href="401_06_arrays">Revisión de GML - Arrays</a>.
+</p>
+
+<p><br></p>
+
+<h3 class="studio">Booleans</h3>
+
+<p>
+    Un booleano es simplemente un valor que puede ser <tt>true (verdadero)</tt> o <tt>false (falso)</tt>.
+    Tenga en cuenta que <i>GameMaker: Studio</i> no soporta "verdaderos" valores booleanos,
+    y acepta cualquier número por debajo de 0.5 como false y cualquier número mayor o 
+    igual a 0.5 como verdadero. Esto <i>no</i> signinifca que debas utilizar 1 y 0 
+    (u otro número real) para verificar variables true y false, y que GameMaker: Studio tiene
+    las <b>constantes</b> <tt>true</tt> y <tt>false</tt> las cuales deberían ser 
+    utilizadas siempre en su código para evitar cualquier problema, en una actualización 
+    futura se añadiran verdaderos valores booleanos como tipo de datos.
+    <br>
+    <br>
+</p>
+
+<h3 class="studio">Punteros</h3>
+
+<p>
+    Un puntero es un tipo de dato que "apunta" a un lugar en la memoria. Usted no 
+    puede hacer operaciones con un puntero y es utilizado unicamente para algunas
+    funciones especificas, como por ejemplo, obtener una textura o la dirección de 
+    memoria de un buffer. Para conocer las funciones que retornan punteros revise:
+    <a href="../buffers/buffer_get_address"><tt>buffer_get_address</tt></a>
+    o <a href="../game_assets/sprites/sprite_get_texture"><tt>sprite_get_texture</tt></a>.
+    <br>
+    <br>
+    También hay una función para revisar si algún valor es un puntero (Revise "<b>Validando tipos de dato</b>", abajo)
+    y una función para convertir un valor a un puntero:
+</p>
+
+<blockquote>
+    <ol>
+        <li><a href="ptr">ptr</a><br></li>
+    </ol>
+</blockquote>
+
+<h3 class="studio">Enums</h3>
+
+<p>
+    Un enum es una "enumeración", y básicamente te permite crear tu propio tipo 
+    de dato de valores constantes. Los Enums son variables de <a href="../variables/index">alcance global</a>
+    (esto es de forma implicita, no requiere el sufijo "<tt>global</tt>" o <tt>globalvar</tt>)
+    y tienen la siguiente estructura:
+</p>
+
+<p class="code">enum
+<i>&lt;variable&gt;</i>{<i>&lt;constant&gt;</i> [=
+<i>&lt;value&gt;</i>]}<br></p>
+
+<p>
+    En el siguiente ejemplo, creamos una enumeración que contiene
+    los colores del arcoiris y asigna diferentes constantes como sus
+    valores:
+</p>
+
+<p class="code">enum rainbowcolors {<br>
+&nbsp;&nbsp;&nbsp;red,<br>
+&nbsp;&nbsp;&nbsp;orange,<br>
+&nbsp;&nbsp;&nbsp;yellow,<br>
+&nbsp;&nbsp;&nbsp;green,<br>
+&nbsp;&nbsp;&nbsp;blue,<br>
+&nbsp;&nbsp;&nbsp;indigo,<br>
+&nbsp;&nbsp;&nbsp;violet<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>
+    Los valores de los enum solamente pueden ser <b>números reales</b> o 
+    <b>expresiones con otros enums</b>, y por defecto estan enumerados desde 0
+    en adelante, así que para nuestro ejemplo anterior los valores serían: 
+    <tt>red = 0</tt>, <tt>orange = 1</tt>, <tt>yellow = 2</tt>, etc... Usted 
+    también puede asignar los valores a un enum manualmente al momento de 
+    definirlos, usando números reales o expresiones:
+</p>
+
+<p class="code">enum rainbowcolors {<br>
+&nbsp;&nbsp;&nbsp;red = 5,<br>
+&nbsp;&nbsp;&nbsp;orange = 5 * 2,<br>
+&nbsp;&nbsp;&nbsp;yellow = 15,<br>
+&nbsp;&nbsp;&nbsp;green = 20,<br>
+&nbsp;&nbsp;&nbsp;blue = 25,<br>
+&nbsp;&nbsp;&nbsp;indigo = 30,<br>
+&nbsp;&nbsp;&nbsp;violet = 35 * enum_test.entry<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>
+    Notese que en el anterior ejemplo utilizamos otro enum para crear la expresión 
+    "violet". Esto solo funcionará si el enum siendo referenciado fue creado <i>previamente</i>,
+    esto es porque el valor del enum debe ser evaluado como una constante al compilar.
+    <br>
+    <br>
+    Para acceder luego a valores que existen dentro de un enum, usted puede utilizar 
+    el método del punto <tt>"."</tt>, de la siguiente forma:
+</p>
+
+<p class="code">var value = rainbowcolours.green;</p>
+
+<p>
+    Tenga en cuenta que usted no puede modificar ningún valor de los enums 
+    luego de que estos han sido creados.
+    <br>
+    <br>
+</p>
+
+<h3 class="studio">Undefined</h3>
+
+<p>
+    Un valor undefined (indefinido, también conocido como "null") es uno donde una 
+    expresión no tiene un valor correcto, sin embargo como es sintácticamente correcto,
+    debe retornar <i>algo</i>. Por ejemplo, supongamos que usted tiene un <tt>ds_map</tt>
+    y utiliza la función <tt>ds_map_find_value()</tt>. Ahora, ¿qué pasa cuando el mapa
+    no contiene el valor buscado? como la función esta bien formada, y el problema es 
+    que el valor no existe, entonces retornaría la <b>constante</b> <tt>undefined</tt>,
+    y usted puede validar esta constante del mismo modo que lo haría con <tt>true</tt>
+    o cualquier otro valor.
+    <br>
+    <br>
+</p>
+
+<h3 class="studio">Validando tipos de dato</h3>
+
+<p>
+    <i>GameMaker: Studio</i> le permite validar que el tipo de dato de alguna 
+    variable sea de un tipo conocido con las siguientes funciones:
+</p>
+
+<blockquote>
+    <ol>
+        <li><a href="is_string">is_string</a><br></li>
+        
+        <li><a href="is_real">is_real</a><br></li>
+        
+        <li><a href="is_array">is_array</a><br></li>
+        
+        <li><a href="is_ptr">is_ptr</a><br></li>
+        
+        <li><a href="is_int32">is_int32</a><br></li>
+        
+        <li><a href="is_int64">is_int64</a><br></li>
+        
+        <li><a href="is_matrix">is_matrix</a><br></li>
+        
+        <li><a href="is_undefined">is_undefined</a><br></li>
+    </ol>
+</blockquote>
+
+<p><br></p>
+
+<div class="clear">
+    <div style="float:left">Anterior: <a href="index">Descripción del GML</a></div>
+    
+    <div style="float:right">Next: <a href="401_06_arrays">Arrays</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2015 All Rights Reserved</h5>

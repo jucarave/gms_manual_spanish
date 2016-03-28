@@ -2,4 +2,5 @@ RewriteEngine On
 RewriteBase /
 
 RewriteRule ^(css|img)($|/) - [L]
+RewriteRule ^(.*)png - [L]
 RewriteRule ^(.*)/?$ index.php?page=$1 [L,NC,QSA]

@@ -1,0 +1,70 @@
+<h1 class="studio">is_string</h1>
+
+<h2 class="studio">Retorna verdadero si el parámetro pasado es una cadena de texto.</h2>
+
+<h3><b>Sintaxis:</b></h3>
+
+<p class="code">is_string(n);</p>
+
+<p><br></p>
+
+<div class="param">
+    <table>
+        <tbody>
+            <tr>
+                <th>Argumento</th>
+                <th>Descripción</th>
+            </tr>
+        
+            <tr>
+                <td>n</td>
+                <td>El argumento a validar.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Retorna:</b> Boolean</p>
+
+<p><br></p>
+
+<h3 class="studio">Descripción</h3>
+
+<p>
+    Esta función retorna verdadero cuando el tipo de variable pasado es una 
+    cadena de texto. En algunos casos usted va a querer validar si una variable 
+    en <i>GameMaker: Studio</i> contiene un string y no un real y ahí es cuando 
+    usted puede utilizar esta función. Esta función <i>no</i> retorna el string 
+    por el contrario retorna <tt>true</tt> o <tt>false</tt>, así que por ejemplo
+    un valor "fish" va a retornar <tt>true</tt> mientras que un valor 200 va a 
+    retornar <tt>false</tt>.
+    <br>
+    <br>
+</p>
+
+<p><br></p>
+
+<h3><b>Ejemplo:</b></h3>
+
+<p class="code">if is_string(val)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;name = "Player: " + val;<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>
+    El código anterior valida que la variable "val" sea un string y si lo es entonces 
+    lo añade a otro string el cual es asignado a la variable "name".
+</p>
+
+<p><br></p>
+
+<div class="clear">
+    <div style="float:left">Anterior: <a href="../strings/index">Strings</a></div>
+    
+    <div style="float:right">Siguiente: <a href="../strings/string">string</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2015 All Rights Reserved</h5>

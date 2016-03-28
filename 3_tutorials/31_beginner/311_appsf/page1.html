@@ -1,0 +1,56 @@
+<h1 class="studio">Tutorial</h1>
+<h2 class="studio"><i>Página 1 de 5</i></h2>
+
+<p>
+    La ubicación del tutorial se muestra en la imagen de abajo<br>
+    <img class="center" src="ubicacion.png"><br>
+</p>
+
+<h3 class="studio">La Superficie de Aplicación (Application Surface)</h3>
+
+<p>
+    Este tutorial está diseñado como una introducción a la <b>application surface</b>, 
+    sugiere algunos de los muchos usos que se le pueden dar, y es el primero de una 
+    serie de tres tutoriales (los otros se encuentran en las secciones intermedio 
+    y avanzado, en la pantalla inicial de GMS). No obstante, antes de comenzar a 
+    programar, se dará una breve descripción de lo que es la application surface 
+    y por qué es una parte importante de GMS.
+    <br><br>
+</p>
+
+<h4 class="studio">¿Qué es la Superficie de Aplicación?</h4>
+
+<p>
+    En versiones previas de GM y GMS el dibujo era manejado por el <b>back buffer</b>, 
+    todo se dibujaba ahí y después se copiaba a la pantalla. Este proceso evitaba 
+    que el programador tuviera un completo control del dibujo, y que algunas cosas 
+    no se realizaran correctamente, como el ajuste a pantalla completa.
+    <br><br>
+    Para remediar esto, GMS cambió su <b>draw pipeline</b> en la versión 1.3, 
+    ahora se dibuja en una superficie especial - la application surface.
+</p>
+
+<blockquote>
+    <i><b>NOTA:</b> Si no está familiarizado con las superficies (surfaces), 
+    entonces es recomendable que lea el manual y los tutoriales sobre 
+    superficies antes de continuar.</i>
+</blockquote>
+
+<p>
+    Esta superficie especial es creada por GMS de forma automática que, a diferencia 
+    de las superficies normales, no se puede borrar. Sin embargo, en todos los demás 
+    aspectos funciona como una superficie normal; se puede dibujar y manipular con 
+    las funciones de superficies. Como identificador de la superfice se usa la 
+    variable <tt>application_surface</tt>.
+    <br><br>
+    Conociendo la existencia de esta superficie y cómo manipularla se abren las 
+    puertas a varios efectos interesantes, que vamos a explorar ...
+    <br><br>
+</p>
+
+<div class="clear">
+    <div style="float:left">Anterior: <a href="../tutorials">Tutoriales</a></div>
+    <div style="float:right">Siguiente: <a href="page2">Página 2</a></div>
+</div>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2014 All Rights Reserved</h5>

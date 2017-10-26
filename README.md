@@ -1,7 +1,7 @@
-﻿Este es un nuevo esfuerzo para traducir el manual de Game Maker Studio 1.4 al
-español para la comunidadGM.org
+Este es un nuevo esfuerzo para traducir el manual de GameMaker Studio 1.4
+al español para [comunidadGM.org](http://www.comunidadgm.org/index.php)
 
-Contribuyentes Actuales:
+Contribuyentes:
 
 * Camilo Ramírez (Jucarave)
 * Clamud
